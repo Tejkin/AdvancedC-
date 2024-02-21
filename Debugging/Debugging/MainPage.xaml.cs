@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -29,73 +30,73 @@ namespace Debugging
     }
     class DiceProbabilities
     {
-        public static Dictionary<int, Double> calculateProbabilitiesForNumberOfDice(int n)
+        public static Dictionary<int, Double> calculateProbabilitiesForNumberOfDice(int numberOfDice)
         {
-            Dictionary<int, int> diceRecord = new Dictionary<int, int>();
-            // Creates new dictionary to hold record of dice throws
+            Dictionary<int, int> rollTotalCount = new Dictionary<int, int>();
+            // Creates new dictionary to hold dice record
 
-            int min = n;
-            int max = n * 6;
+            int min = numberOfDice; // Minimum possible total
+            int max = numberOfDice * 6; // Maximum possible total
 
-            for (int i = min; i <= max; i++)
+            for (int i = min; i <= max; i++) // Populate dictionary, marking possible dice rolls as keys and populating with value 0
             {
-                diceRecord[i] = 0;
+                rollTotalCount[i] = 0;
             }
 
-            int[] d = new int[n];
+            int[] rolls = new int[numberOfDice]; // Create list of size numberOfDice
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < numberOfDice; i++) // Populating rolls with the smallest possible roll
             {
-                d[i] = 1;
+                rolls[i] = 1; 
             }
 
-            bool finished1 = false;
+            bool allDiceAccountedFor = false; // Boolean value to check if all dice has been included in its calculation
 
-            while (!finished1)
+            while (!allDiceAccountedFor)
             {
-                int total = 0;
-                foreach (int r in d)
+                int rollTotal = 0; // Total from rolls
+                foreach (int roll in rolls) // Tallies up all rolls from the rollRecord
                 {
-                    total += r;
+                    rollTotal += roll;
                 }
 
-                diceRecord[total] += 1;
+                rollTotalCount[rollTotal] += 1; // Adding a count to the rollTotalCount dictionary with the roll total as key
 
-                int i = 0;
-                bool finished2 = false;
+                int currentDice = 0; // Set current dice to the first dice of the list
+                bool currentDiceIsMaxed = false; // Set boolean value to while the current dice isnt at its max roll (6)
 
-                while (!finished2)
+                while (!currentDiceIsMaxed)
                 {
-                    d[i] += 1;
+                    rolls[currentDice] += 1; // Add 1 to the value of the current dice
 
-                    if (d[i] <= 6)
+                    if (rolls[currentDice] <= 6) // Check if the current dice exceeds or equals to the max dice value of 6
                     {
-                        finished2 = true;
+                        currentDiceIsMaxed = true; // Set boolean value to true so that the code can move on to the next dice
                     }
 
                     else
                     {
-                        if (i == n - 1)
+                        if (currentDice == numberOfDice - 1) // If the count of the current dice equals to the value of the total number of dice.
                         {
-                            finished1 = true;
-                            finished2 = true;
+                            allDiceAccountedFor = true;
+                            currentDiceIsMaxed = true;
                         }
                         else
                         {
-                            d[i] = 1;
+                            rolls[currentDice] = 1;
                         }
                     }
-                    i++;
+                    currentDice++; // Set next dice as current dice
                 }
             }
 
-            Dictionary<int, Double> rp = new Dictionary<int, double>();
-            Double total2 = Math.Pow(6.0, (Double)n);
+            Dictionary<int, Double> rollPossibilities = new Dictionary<int, double>(); // Creates dictionary to hold the all roll possibilities and the probability of it occuring
+            Double totalPossibleDiceRolls = Math.Pow(6.0, (Double)numberOfDice); // Calculate the total for all possible dice rolls
             for (int i = min; i <= max; i++)
             {
-                rp[i] = (Double)diceRecord[i] / total2;
+                rollPossibilities[i] = (Double)rollTotalCount[i] / totalPossibleDiceRolls; // Calculate the chances of a certail roll occuring
             }
-            return rp;
+            return rollPossibilities;
         }
     }
 }
