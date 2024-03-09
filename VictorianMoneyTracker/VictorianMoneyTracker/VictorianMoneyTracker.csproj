@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{DAA0AF2A-C01C-45B3-975B-340B1EE139C2}</ProjectGuid>
+    <ProjectGuid>{B01B8FD2-B826-443D-85E6-9B1AAC8A5EF3}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Victorian_Money_Tracker</RootNamespace>
-    <AssemblyName>Victorian Money Tracker</AssemblyName>
+    <RootNamespace>VictorianMoneyTracker</RootNamespace>
+    <AssemblyName>VictorianMoneyTracker</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22621.0</TargetPlatformVersion>
