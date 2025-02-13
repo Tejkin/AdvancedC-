@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="THOMAS_CHEN_MEDIA_TRACKER.MainPage">
+
+    <StackLayout>
+        <Label Text=""/>
+        <Label Text="Media List" FontSize="Header" HorizontalOptions="Center"/>
+        <Picker x:Name="mediaPicker" HorizontalOptions="Center" SelectedIndex="0" FontSize="Large" SelectedIndexChanged="mediaPicker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>Movie</x:String>
+                <x:String>Book</x:String>
+                <x:String>TV Series</x:String>
+            </Picker.Items>
+        </Picker>
+        <Grid HeightRequest="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Name" Grid.Row="0" Grid.Column="0" FontSize="Large"/>
+            <Label Text="Available" Grid.Row="0" Grid.Column="1" FontSize="Large"/>
+
+            <ListView x:Name="mediaNameListView" Grid.Row="1" Grid.Column="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding name}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="mediaDateListView" Grid.Row="1" Grid.Column="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding releaseDate}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+        <Button Text="Add Media" FontSize="Header" x:Name="addMediaBtn" HorizontalOptions="Center" HeightRequest="100" WidthRequest="500" VerticalOptions="End" Clicked="addMediaBtn_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

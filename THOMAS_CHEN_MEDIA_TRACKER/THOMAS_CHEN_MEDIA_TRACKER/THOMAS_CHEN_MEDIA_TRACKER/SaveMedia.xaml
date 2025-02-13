@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="THOMAS_CHEN_MEDIA_TRACKER.SaveMedia">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text=""/>
+            <Label Text="Add Media" FontSize="Header" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Type" HorizontalOptions="Center" FontSize="Large"/>
+                <Picker x:Name="mediaPicker" HorizontalOptions="Center" SelectedIndex="0"  FontSize="Large" SelectedIndexChanged="mediaPicker_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Movie</x:String>
+                        <x:String>Book</x:String>
+                        <x:String>TV Series</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Name" HorizontalOptions="Center"  FontSize="Large"/>
+                <Entry x:Name="nameEntry" HorizontalOptions="Center"  FontSize="Large" WidthRequest="400"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Release Date" HorizontalOptions="Center"  FontSize="Large"/>
+                <DatePicker x:Name="releaseDatePicker" FontSize="Large" WidthRequest="600"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Director" HorizontalOptions="Center"  FontSize="Large" x:Name="directorLabel"/>
+                <Entry x:Name="directorEntry" HorizontalOptions="Center"  FontSize="Large" WidthRequest="400"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Duration" HorizontalOptions="Center"  FontSize="Large" x:Name="durationLabel"/>
+                <Entry x:Name="durationEntry" HorizontalOptions="Center"  FontSize="Large" WidthRequest="200"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Finished" HorizontalOptions="Center"  FontSize="Large"/>
+                <CheckBox x:Name="finishedCheck" HorizontalOptions="Center"/>
+            </StackLayout>
+            <Button Text="Save" x:Name="saveBtn" Clicked="saveBtn_Clicked" FontSize="Header" HeightRequest="100" WidthRequest="500"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

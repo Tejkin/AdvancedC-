@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="THOMAS_CHEN_CURRENCY_CONVERTER.MainPage">
+
+    <StackLayout>
+        <Label Text=""/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Label x:Name="audLabel" FontSize="Header" Text="$0"/>
+            <Label Text="AUD" FontSize="Header"/>
+        </StackLayout>
+        <ListView x:Name="exchangeRateListView" HeightRequest="50" ItemTapped="exchangeRateListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label Text="{Binding currencyCode}"/>
+                            <Label Text="{Binding exchangeRate}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Label x:Name="outputLabel" FontSize="Header"/>
+            <Label Text="USD" x:Name="outputCurrencyLabel" FontSize="Header"/>
+        </StackLayout>
+
+        <Grid HorizontalOptions="Center">
+            <Button Grid.Row="0" Grid.Column="0" Text="7" x:Name="sevenButton" Clicked="button_Clicked" HeightRequest="100" FontSize="50"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="8" x:Name="eightButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="9" x:Name="nineButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="4" x:Name="fourButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="5" x:Name="fiveButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="6" x:Name="sixButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="1" x:Name="oneButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="2" x:Name="twoButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="3" x:Name="threeButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="3" Grid.Column="0" Text="0" x:Name="zeroButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="." x:Name="dotButton" Clicked="button_Clicked" FontSize="50"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="C" x:Name="cButton" Clicked="button_Clicked" FontSize="50"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

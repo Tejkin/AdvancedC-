@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Thomas_Chen_Quote_App.MainPage">
+
+    <StackLayout>
+        <Label Text="Quotes by Authors" HorizontalTextAlignment="Center" FontSize="Header"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <Label Text="Quote: "/>
+            <Entry x:Name="quoteEntry" ClearButtonVisibility="WhileEditing" WidthRequest="800"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <Label Text="Author: "/>
+            <Entry x:Name="authorEntry" ClearButtonVisibility="WhileEditing" WidthRequest="200"/>
+        </StackLayout>
+        <Button Text="Add quote" x:Name="addButton" HorizontalOptions="Center" Clicked="addButton_Clicked"/>
+        
+        <Label Text=" "/>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+            <Label x:Name="displayQuote" HorizontalOptions="Center"/>
+            <ImageButton x:Name="unfavouriteButton"  Source="Assets/unheart.png" WidthRequest="20" IsVisible="false" Clicked="unfavouriteButton_Clicked"/>
+            <ImageButton x:Name="favouriteButton" Source="Assets/heart.png" WidthRequest="20" IsVisible="false" Clicked="favouriteButton_Clicked"/>
+        </StackLayout>
+        <Button Text="Random Quote" x:Name="randomizeButton" HorizontalOptions="Center" Clicked="randomizeButton_Clicked"/>
+        <Label Text=" "/>
+        <Button Text="Show Favourite Quotes" x:Name="showFavouriteButton" HorizontalOptions="Center" FontSize="Medium" Clicked="showFavouriteButton_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

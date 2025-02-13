@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HowLongSince.Page1">
+    <ContentPage.Content>
+        <StackLayout x:Name="initialStack">
+            <Label Text =" "/>
+            <Label Text="Settings" FontSize="50" x:Name="settingsLabel" HorizontalOptions="Center"/>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label Text="Dark Mode" x:Name="darkLabel" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Switch Toggled="darkModeSwitch_Toggled" x:Name="darkModeSwitch"/>
+            </StackLayout>
+            <Label Text=""/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label x:Name="fontSizeLabel" Text="Font Size: "/>
+                <Label x:Name="fontSizeEntry"/>
+            </StackLayout>
+            
+            <Stepper HorizontalOptions="Center" x:Name="fontSizeStepper" ValueChanged="fontSizeStepper_ValueChanged" Minimum="5" Maximum="25"/>
+            <Label Text=""/>
+            <Button x:Name="previousPage" Text="Previous Page" Clicked="previousPage_Clicked"  HorizontalOptions="Center" FontSize="35"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

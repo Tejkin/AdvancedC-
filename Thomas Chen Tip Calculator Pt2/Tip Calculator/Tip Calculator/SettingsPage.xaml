@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tip_Calculator.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="initialStack">
+            <Label Text =" "/>
+            <Label Text="Settings" FontSize="50" x:Name="settingsLabel" HorizontalOptions="Center"/>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label Text="Sound " HorizontalOptions="Center" VerticalOptions="Center" x:Name="soundLabel"/>
+                <Switch x:Name="soundSwitch" Toggled="soundSwitch_Toggled"/>
+            </StackLayout>
+            <Label Text=""/>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label Text="Colour Scheme: " x:Name="schemeLabel"/>
+                <Picker x:Name="schemePicker" Title="Select a scheme" SelectedIndexChanged="schemePicker_SelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Blue</x:String>
+                            <x:String>Red</x:String>
+                            <x:String>Neon</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <Label Text=""/>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label Text="Dark Mode" x:Name="darkLabel" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Switch Toggled="Switch_Toggled" x:Name="darkModeSwitch"/>
+            </StackLayout>
+            <Label Text=""/>
+            <Button x:Name="previousPage" Text="Previous Page" Clicked="previousPage_Clicked" HorizontalOptions="Center" FontSize="35"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

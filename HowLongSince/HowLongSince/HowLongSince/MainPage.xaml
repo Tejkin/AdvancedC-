@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HowLongSince.MainPage">
+
+
+    <StackLayout x:Name="initialStack">
+        <Label Text=""/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+            <Label Text="" HorizontalOptions="StartAndExpand"/>
+            <Label x:Name="taskLabel" Text="Task" HorizontalTextAlignment="Center" VerticalTextAlignment="Top" FontSize="Header" HorizontalOptions="CenterAndExpand"/>
+            <ImageButton x:Name="preferences" Source="Assets/cog.png" HeightRequest="35" Clicked="preferences_Clicked" HorizontalOptions="EndAndExpand" BackgroundColor="White"/>
+        </StackLayout>
+        
+        <ListView x:Name="tasksListView" ItemTapped="tasksListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding name}" FontSize="{Binding FontSize}" x:Name="nameLabel"/>
+                            <Label Text="{Binding duration}" FontSize="{Binding FontSize}" x:Name="durationLabel" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry Placeholder="Enter Task" HorizontalOptions="Fill" x:Name="taskEntry"/>
+        <ImageButton BackgroundColor="White" Source="Assets/add.png" HeightRequest="25" Clicked="ImageButton_Clicked" x:Name="add"/>
+
+    </StackLayout>
+
+
+</ContentPage>
