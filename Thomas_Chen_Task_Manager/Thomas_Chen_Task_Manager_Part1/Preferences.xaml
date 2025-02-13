@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="Thomas_Chen_Task_Manager.PreferencesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Thomas_Chen_Task_Manager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Padding="20">
+        <Button Content="Back" Click="BackButton_Click" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock Text=""/>
+        <ComboBox x:Name="ColorSchemeComboBox" Header="Color Scheme" SelectionChanged="ColorSchemeComboBox_SelectionChanged">
+            <ComboBoxItem Content="Light"/>
+            <ComboBoxItem Content="Dark"/>
+        </ComboBox>
+        <ComboBox x:Name="SortOrderComboBox" Header="Sort Order" SelectionChanged="SortOrderComboBox_SelectionChanged">
+            <ComboBoxItem Content="By Date"/>
+            <ComboBoxItem Content="Alphabetically"/>
+        </ComboBox>
+
+    </StackPanel>
+</Page>

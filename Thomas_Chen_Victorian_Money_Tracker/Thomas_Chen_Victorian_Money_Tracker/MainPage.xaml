@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="Thomas_Chen_Victorian_Money_Tracker.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Thomas_Chen_Victorian_Money_Tracker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Total Worth -->
+       
+        <TextBlock x:Name="TotalWorthTextBlock" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="30"/>
+       
+        
+
+            <!-- Money Types -->
+        <StackPanel Grid.Row="1" Margin="20">
+            <!-- Pounds -->
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button x:Name="PoundsDecreaseButton" Content="-" Margin="5" Click="PoundsDecreaseButton_Click" Height="50" Width="50"/>
+                <Button x:Name="PoundsDowngradeButton" Margin="5" Click="PoundsDowngradeButton_Click" IsEnabledChanged="ButtonDown_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="PoundsDowngradeImage" Source="Assets/downArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="PoundsAmountTextBlock" Text="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <Button x:Name="PoundsUpgradeButton" Margin="5" IsEnabledChanged="ButtonUp_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="PoundsUpgradeImage" Source="Assets/upArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <Button x:Name="PoundsIncreaseButton" Content="+" Margin="5" Click="PoundsIncreaseButton_Click" Height="50" Width="50"/>
+            </StackPanel>
+
+            <!-- Crowns -->
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button x:Name="CrownsDecreaseButton" Content="-" Margin="5" Click="CrownsDecreaseButton_Click" Height="50" Width="50"/>
+                <Button x:Name="CrownsDowngradeButton" Margin="5" Click="CrownsDowngradeButton_Click" IsEnabledChanged="ButtonDown_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="CrownsDowngradeImage" Source="Assets/downArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="CrownsAmountTextBlock" Text="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <Button x:Name="CrownsUpgradeButton" Margin="5" Click="CrownsUpgradeButton_Click" IsEnabledChanged="ButtonUp_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="CrownsUpgradeImage" Source="Assets/upArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <Button x:Name="CrownsIncreaseButton" Content="+" Margin="5" Click="CrownsIncreaseButton_Click" Height="50" Width="50"/>
+            </StackPanel>
+
+            <!-- Shillings -->
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button x:Name="ShillingsDecreaseButton" Content="-" Margin="5" Click="ShillingsDecreaseButton_Click" Height="50" Width="50"/>
+                <Button x:Name="ShillingsDowngradeButton" Margin="5" Click="ShillingsDowngradeButton_Click" IsEnabledChanged="ButtonDown_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="ShillingsDowngradeImage" Source="Assets/downArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="ShillingsAmountTextBlock" Text="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <Button x:Name="ShillingsUpgradeButton" Margin="5" Click="ShillingsUpgradeButton_Click" IsEnabledChanged="ButtonUp_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="ShillingsUpgradeImage" Source="Assets/upArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <Button x:Name="ShillingsIncreaseButton" Content="+" Margin="5" Click="ShillingsIncreaseButton_Click" Height="50" Width="50"/>
+            </StackPanel>
+
+            <!-- Pence -->
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button x:Name="PenceDecreaseButton" Content="-" Margin="5" Click="PenceDecreaseButton_Click" Height="50" Width="50"/>
+                <Button x:Name="PenceDowngradeButton" Margin="5" Click="PenceDowngradeButton_Click" IsEnabledChanged="ButtonDown_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="PenceDowngradeImage" Source="Assets/downArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="PenceAmountTextBlock" Text="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <Button x:Name="PenceUpgradeButton" Margin="5" Click="PenceUpgradeButton_Click" IsEnabledChanged="ButtonUp_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="PenceUpgradeImage" Source="Assets/upArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <Button x:Name="PenceIncreaseButton" Content="+" Margin="5" Click="PenceIncreaseButton_Click" Height="50" Width="50"/>
+            </StackPanel>
+
+            <!-- Farthings -->
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button x:Name="FarthingsDecreaseButton" Content="-" Margin="5" Click="FarthingsDecreaseButton_Click" Height="50" Width="50"/>
+                <Button x:Name="FarthingsDowngradeButton" Margin="5" Click="FarthingsDowngradeButton_Click" IsEnabledChanged="ButtonDown_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="FarthingsDowngradeImage" Source="Assets/downArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <StackPanel>
+                    <TextBlock x:Name="FarthingsAmountTextBlock" Text="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <Button x:Name="FarthingsUpgradeButton" Margin="5" Click="FarthingsUpgradeButton_Click" IsEnabledChanged="ButtonUp_IsEnabledChanged" IsEnabled="False">
+                    <Image x:Name="FarthingsUpgradeImage" Source="Assets/upArrowDisabled.png" Height="50" Width="50"/>
+                </Button>
+                <Button x:Name="FarthingsIncreaseButton" Content="+" Margin="5" Click="FarthingsIncreaseButton_Click" Height="50" Width="50"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
